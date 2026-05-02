@@ -51,12 +51,22 @@ Sprites are 2D arrays of hex color strings (`null` = transparent), drawn with `f
 
 ## Git workflow
 
-Commit and push to GitHub after every meaningful change:
+**Commit and push frequently throughout every work session** — after each feature, fix, or meaningful change, not just at the end. This ensures work is never lost and any change can be reverted cleanly.
 
 ```bash
-git add <specific files>
-git commit -m "imperative title\n\nbullet details"
+git add <specific files>          # stage only the relevant files
+git commit -m "imperative title
+
+- bullet detail if multi-file
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"
 git push
 ```
+
+Rules:
+- Push immediately after every commit — do not let commits accumulate locally
+- Write commit messages in the imperative ("Add X", "Fix Y", not "Added X")
+- Stage files individually, never `git add .` or `git add -A`
+- One logical change per commit — don't bundle unrelated edits
 
 Remote: `https://github.com/LeventRommel/ClaudeCodeTest01` (branch `main`).
